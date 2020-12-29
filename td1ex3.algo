@@ -1,0 +1,13 @@
+PROCEDURE inverse_tab(tab : ARRAY_OF INTEGER, start : INTEGER, final : INTEGER)
+VAR
+    aux : INTEGER
+BEGIN
+    IF (start < final) THEN
+        aux := tab[start]
+        tab[start] := tab[final]
+        tab[final] := aux
+        inverse_tab(tab,start+1, final-1)
+    END_IF
+END
+
+// first call inverse_tab(tab,0, tab.length-1)
