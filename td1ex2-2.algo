@@ -1,0 +1,16 @@
+FUNCTION palind(ch:STRING, start: INTEGER, final: INTEGER) : BOOLEAN
+BEGIN
+    IF (start < final) THEN
+        IF (ch[start] = ch[final]) THEN
+            RETURN  palind(ch, start+1, final-1)
+        ELSE_IF (ch[final] = ' ') THEN
+            RETURN  palind(ch, start, final-1)
+        ELSE_IF (ch[start] = ' ') THEN
+            RETURN palind(ch, start+1, final)
+        ELSE
+            RETURN FALSE
+        END_IF
+    ELSE
+        RETURN TRUE
+    END_IF
+END
