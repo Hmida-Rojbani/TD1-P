@@ -1,0 +1,26 @@
+PROCEDURE nb_occ(tab: ARRAY_OF INTEGER, x : INTEGER, ind: INTEGER, VAR nb : INTEGER)
+BEGIN
+    IF (ind < tab.length) THEN
+        IF (tab[ind] = x) THEN
+            nb_occ(tab,x,ind+1,nb+1)
+        ELSE
+            nb_occ(tab,x,ind+1,nb)
+        END_IF
+    END_IF
+END
+// first call ( nb = 0)
+// Other Version
+
+FUNCTION nb_occ(tab: ARRAY_OF INTEGER, x : INTEGER, ind: INTEGER) : INTEGER
+
+BEGIN
+    IF (ind < tab.length) THEN
+        IF (tab[ind] = x) THEN
+            RETURN nb_occ(tab,x,ind+1) + 1
+        ELSE
+            RETURN nb_occ(tab,x,ind+1)
+        END_IF
+    ELSE
+        RETURN 0
+    END_IF
+END
