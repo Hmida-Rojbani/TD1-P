@@ -1,0 +1,12 @@
+FUNCTION position(tab : ARRAY_OF INTEGER, e : INTEGER, ind : INTEGER) : INTEGER
+BEGIN
+    IF (ind < tab.length AND tab[ind] <= e) THEN
+        IF (tab[ind] = e) THEN
+            RETURN ind
+        ELSE
+            RETURN position(tab, e, ind + 1)
+        END_IF
+    ELSE
+        RETURN -1
+    END_IF
+END
