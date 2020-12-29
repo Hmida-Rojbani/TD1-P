@@ -1,0 +1,30 @@
+FUNCTION palind(ch:STRING, start: INTEGER, final: INTEGER) : BOOLEAN
+BEGIN
+    IF (start < final) THEN
+        IF (ch[start] <> ch[final]) THEN
+            RETURN FALSE
+        ELSE
+            RETURN palind(ch, start+1, final-1)
+        END_IF
+    ELSE
+        RETURN TRUE
+    END_IF
+END
+
+// version with delete
+
+FUNCTION palind(ch:STRING) : BOOLEAN
+
+BEGIN
+    IF (ch.length < 2) THEN
+        RETURN TRUE
+    ELSE
+        IF (ch[0] <> ch[ch.length-1]) THEN
+            RETURN FALSE
+        ELSE
+            delete(ch,0) // delete from ch with index
+            delete(ch,ch.length-1)
+            RETURN palind(ch)
+        END_IF
+    END_IF
+END
