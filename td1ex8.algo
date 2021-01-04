@@ -1,0 +1,13 @@
+FUNCTION ParitéAlterné(tab : ARRAY_OF INTEGER, ind : INTEGER, rd : INTEGER) : BOOLEAN
+
+BEGIN
+    IF (ind = tab.length) THEN
+        RETURN TRUE
+    ELSE_IF (tab[ind] mod 2 = rd) THEN
+        RETURN FALSE
+    ELSE
+        ParitéAlterné(tab, ind+1, tab[ind] mod 2)
+    END_IF
+END
+
+// rest division of previous value
