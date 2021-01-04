@@ -1,0 +1,8 @@
+FUNCTION sum(n) : INTEGER
+BEGIN
+    IF (n > 0) THEN
+        RETURN n + sum(n-1)
+    ELSE
+        RETURN 0
+    END_IF
+END
