@@ -1,0 +1,11 @@
+PROCEDURE Incrément(VAR T : ARRAY_OF INTEGER, N : INTEGER)
+BEGIN
+    IF (N >= 0) THEN
+        IF (T[N] mod 2 = 0) THEN
+            T[N] := T[N] + N           
+        ELSE
+            T[N] := T[N] - N
+        END_IF
+        Incrément(T, N-1)
+    END_IF
+END

@@ -1,0 +1,12 @@
+FUNCTION Alterne(T : ARRAY_OF INTEGER, ind :INTEGER) : BOOLEAN
+BEGIN
+    IF (ind = T.length) THEN
+        RETURN TRUE
+    ELSE_IF (T[ind] < T[ind-1] AND T[ind] < T[ind+1]) THEN
+        RETURN Alterne(T, i+1)
+    ELSE_IF (T[ind] > T[ind-1] AND T[ind] > T[ind+1]) THEN
+        RETURN Alterne(T, i+1)
+    ELSE
+        RETURN FALSE
+    END_IF
+END

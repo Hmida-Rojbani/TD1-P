@@ -1,0 +1,8 @@
+FUNCTION LP(list : List) : BOOLEAN
+BEGIN
+   IF (list = NULL) THEN
+       RETURN TRUE
+   ELSE
+       RETURN NOT LP(list^.next)
+   END_IF
+END
